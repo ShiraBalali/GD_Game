@@ -11,7 +11,7 @@ public class MovementController : MonoBehaviour
     [SerializeField] int speed;
     float speedMultiplier;
 
-    [Range(1,10)]
+    [Range(1, 10)]
     [SerializeField] float acceleration;
 
     bool btnPressed;
@@ -22,12 +22,15 @@ public class MovementController : MonoBehaviour
 
     Vector2 relativeTransform;
 
+    public bool isOnPlatform;
+    public Rigidbody2D platformRb;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-        private void Start()
+    private void Start()
     {
         UpdateRelativeTransform();
     }
@@ -36,11 +39,19 @@ public class MovementController : MonoBehaviour
     {
         UpdateSpeedMultiplier();
 
-        float targetSpeed = speed * speedMultiplier* relativeTransform.x;
-        rb.velocity = new Vector2(targetSpeed, rb.velocity.y);
+        float targetSpeed = speed * speedMultiplier * relativeTransform.x;
+        if (isOnPlatform)
+        {
+            rb.velocity = new Vector2(targetSpeed + platformRb.velocity.x, rb.velocity.y);
+        }
+        else
+        {
+            rb.velocity = new Vector2(targetSpeed, rb.velocity.y);
+        }
+
 
         isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector2(0.06f, 0.5f), 0, wallLayer);
-        
+
         if (isWallTouch)
         {
             Flip();
@@ -77,12 +88,12 @@ public class MovementController : MonoBehaviour
     {
         if (btnPressed && speedMultiplier < 1)
         {
-            speedMultiplier += Time.deltaTime*acceleration ;
+            speedMultiplier += Time.deltaTime * acceleration;
 
         }
         else if (!btnPressed && speedMultiplier > 0)
         {
-            speedMultiplier -= Time.deltaTime*acceleration ;
+            speedMultiplier -= Time.deltaTime * acceleration;
             if (speedMultiplier < 0) speedMultiplier = 0;
         }
     }
