@@ -45,6 +45,8 @@ public class MovingPlatform : MonoBehaviour
 
     private void Update()
     {
+
+        //Debug.Log("1 " + movementController.isOnPlatform);
         if (Vector2.Distance(transform.position, targetPos) < 0.05f)
         {
             NextPoint();
@@ -93,7 +95,6 @@ public class MovingPlatform : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-
             movementController.isOnPlatform = true;
             movementController.platformRb = rb;
             playerRb.gravityScale = playerRb.gravityScale * 50;
