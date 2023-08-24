@@ -7,10 +7,10 @@ public class GameController : MonoBehaviour
     Vector2 checkpointPos;
     Rigidbody2D playerRb;
 
-
     Quaternion playerRotation;
     MovementController movementController;
 
+    bool dying = false;
 
     private void Awake()
     {
@@ -48,17 +48,23 @@ public class GameController : MonoBehaviour
 
     void Die()
     {
-        playerRb.gravityScale = 1;
-        StartCoroutine(Respawn(0.5f));
+        if (!dying)
+        {
+            dying = true;
+            ScoreKeeper.Penalty();
+            StartCoroutine(Respawn(0.5f));
+        }
     }
 
     IEnumerator Respawn(float duration)
     {
+        playerRb.gravityScale = 1;
         playerRb.velocity = new Vector2(0, 0);
         playerRb.simulated = false;
         transform.localScale = new Vector3(0, 0, 0);
         yield return new WaitForSeconds(duration);
         transform.position = checkpointPos;
+        dying = false;
         //transform.rotation = playerRotation;
         transform.rotation = new UnityEngine.Quaternion(0, 0, 0, 0);
         transform.localScale = new Vector3(0.415382f, 0.44693f, 1);

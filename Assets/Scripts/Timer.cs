@@ -6,6 +6,15 @@ using TMPro;
 public class ScoreKeeper : MonoBehaviour
 {
     public static float currentTimer = 0;
+
+    public static int colorTicks = 0;
+    public static Color timeColor = Color.red;
+
+    public static void Penalty()
+    {
+        ScoreKeeper.currentTimer += 10f;
+        ScoreKeeper.colorTicks = 500;
+    }
 }
 
 public class Timer : MonoBehaviour
@@ -21,5 +30,16 @@ public class Timer : MonoBehaviour
         int seconds = Mathf.FloorToInt(ScoreKeeper.currentTimer % 60);
         float milliseconds = ((ScoreKeeper.currentTimer % 60) - seconds) * 100;
         timerText.text = string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, milliseconds);
+
+        if (ScoreKeeper.colorTicks > 0)
+        {
+            ScoreKeeper.colorTicks--;
+            timerText.color = ScoreKeeper.timeColor;
+        }
+        else
+        {
+            timerText.color = Color.white;
+        }
+        
     }
 }
