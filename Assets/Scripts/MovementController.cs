@@ -52,7 +52,7 @@ public class MovementController : MonoBehaviour
         }
 
 
-        isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector2(0.06f, 0.5f), 0, wallLayer);
+        isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector2(0.16f, 0.5f), 0, wallLayer);
 
         if (isWallTouch)
         {
