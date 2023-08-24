@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8753626212168924563}
   - component: {fileID: 8753626212168924560}
   - component: {fileID: 8753626212168924562}
+  - component: {fileID: 8753626212574048963}
   m_Layer: 0
   m_Name: Spike
   m_TagString: Obstacle
@@ -25,9 +26,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8753626212168924561}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.0027723312, y: -0.30037427, z: 0.012144332}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -72,9 +73,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1454014181
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0a5802d16b1999e4d8be8e4c6c279bcf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 893c96b74f8e0cc42a1fae10bc28ed3b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,11 +102,33 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 0.07757664, y: 0.0012928247}
-  - {x: 0.49899006, y: 0.8256155}
-  - {x: 0.928751, y: -0.00075256824}
-  - {x: 0.0779233, y: -0.0038138628}
+  - {x: -1.062267, y: -0.52314615}
+  - {x: -0.8965868, y: 0.1230939}
+  - {x: -0.43523932, y: 0.5171668}
+  - {x: 0.19072427, y: 0.52680606}
+  - {x: 0.7734414, y: 0.31757402}
+  - {x: 1.2161335, y: -0.55391943}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!95 &8753626212574048963
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8753626212168924561}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 37db92a4f0337e545b98d464ecc2398d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

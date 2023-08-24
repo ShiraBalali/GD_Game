@@ -88,7 +88,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7337710940147553076}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2708846, y: -0.030580044, z: 0}
+  m_LocalPosition: {x: -1.2708846, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -156,28 +156,32 @@ PrefabInstance:
       value: Spike
       objectReference: {fileID: 0}
     - target: {fileID: 8753626212168924562, guid: 26bcfbaa2d1f6f242a493dd08b389e5a, type: 3}
+      propertyPath: m_Points.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8753626212168924562, guid: 26bcfbaa2d1f6f242a493dd08b389e5a, type: 3}
       propertyPath: m_Points.Array.data[0].x
-      value: 0
+      value: -0.18521963
       objectReference: {fileID: 0}
     - target: {fileID: 8753626212168924562, guid: 26bcfbaa2d1f6f242a493dd08b389e5a, type: 3}
       propertyPath: m_Points.Array.data[0].y
-      value: 0
+      value: -0.51332134
       objectReference: {fileID: 0}
     - target: {fileID: 8753626212168924562, guid: 26bcfbaa2d1f6f242a493dd08b389e5a, type: 3}
       propertyPath: m_Points.Array.data[1].x
-      value: 0.04
+      value: 0.00038160104
       objectReference: {fileID: 0}
     - target: {fileID: 8753626212168924562, guid: 26bcfbaa2d1f6f242a493dd08b389e5a, type: 3}
       propertyPath: m_Points.Array.data[1].y
-      value: 0.6
+      value: 0.5723503
       objectReference: {fileID: 0}
     - target: {fileID: 8753626212168924562, guid: 26bcfbaa2d1f6f242a493dd08b389e5a, type: 3}
       propertyPath: m_Points.Array.data[2].x
-      value: 0.14
+      value: 0.14484215
       objectReference: {fileID: 0}
     - target: {fileID: 8753626212168924562, guid: 26bcfbaa2d1f6f242a493dd08b389e5a, type: 3}
       propertyPath: m_Points.Array.data[2].y
-      value: 0
+      value: -0.52127993
       objectReference: {fileID: 0}
     - target: {fileID: 8753626212168924563, guid: 26bcfbaa2d1f6f242a493dd08b389e5a, type: 3}
       propertyPath: m_RootOrder
@@ -197,7 +201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8753626212168924563, guid: 26bcfbaa2d1f6f242a493dd08b389e5a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.026
+      value: -0.41
       objectReference: {fileID: 0}
     - target: {fileID: 8753626212168924563, guid: 26bcfbaa2d1f6f242a493dd08b389e5a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -231,7 +235,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8753626212574048963, guid: 26bcfbaa2d1f6f242a493dd08b389e5a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 26bcfbaa2d1f6f242a493dd08b389e5a, type: 3}
 --- !u!1 &2067127560161735592 stripped
 GameObject:
