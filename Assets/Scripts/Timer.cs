@@ -3,19 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+public class ScoreKeeper : MonoBehaviour
+{
+    public static float currentTimer = 0;
+}
+
 public class Timer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
-    [SerializeField] float runningTime;
 
     // Update is called once per frame
     void Update()
     {
-        runningTime += Time.deltaTime;
+        ScoreKeeper.currentTimer += Time.deltaTime;
 
-        int minutes = Mathf.FloorToInt(runningTime / 60);
-        int seconds = Mathf.FloorToInt(runningTime % 60);
-        float milliseconds = ((runningTime % 60) - seconds) * 100;
+        int minutes = Mathf.FloorToInt(ScoreKeeper.currentTimer / 60);
+        int seconds = Mathf.FloorToInt(ScoreKeeper.currentTimer % 60);
+        float milliseconds = ((ScoreKeeper.currentTimer % 60) - seconds) * 100;
         timerText.text = string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, milliseconds);
     }
 }
