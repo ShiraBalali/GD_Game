@@ -41,7 +41,6 @@ public class ParticleController : MonoBehaviour
 
         if (isOnGround && Mathf.Abs(playerRb.velocity.x) > occurAfterVelocity)
         {
-            Debug.Log("1: " + counter + " " + dustFormationPeriod); 
 
             if (counter > dustFormationPeriod)
             {
