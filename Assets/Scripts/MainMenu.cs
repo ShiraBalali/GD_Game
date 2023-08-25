@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
+        ScoreKeeper.currentTimer = 0;
         SceneManager.LoadSceneAsync("Level 1");
     }
 
