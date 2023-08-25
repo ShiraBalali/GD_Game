@@ -30,7 +30,7 @@ public class ParticleController : MonoBehaviour
 
     private void Start()
     {
-        //touchParticle.transform.parent = null;
+        touchParticle.transform.parent = null;
     }
 
 
@@ -41,7 +41,7 @@ public class ParticleController : MonoBehaviour
 
         if (isOnGround && Mathf.Abs(playerRb.velocity.x) > occurAfterVelocity)
         {
-            // Debug.Log("1: " + counter); 
+            Debug.Log("1: " + counter + " " + dustFormationPeriod); 
 
             if (counter > dustFormationPeriod)
             {

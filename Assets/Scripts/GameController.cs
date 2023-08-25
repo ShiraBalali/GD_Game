@@ -58,15 +58,17 @@ public class GameController : MonoBehaviour
 
     IEnumerator Respawn(float duration)
     {
+        playerRb.simulated = false;
         playerRb.gravityScale = 1;
         playerRb.velocity = new Vector2(0, 0);
-        playerRb.simulated = false;
         transform.localScale = new Vector3(0, 0, 0);
         yield return new WaitForSeconds(duration);
         transform.position = checkpointPos;
         dying = false;
+        
         //transform.rotation = playerRotation;
         transform.rotation = new UnityEngine.Quaternion(0, 0, 0, 0);
+        
         transform.localScale = new Vector3(0.415382f, 0.44693f, 1);
         playerRb.simulated = true;
         movementController.UpdateRelativeTransform();

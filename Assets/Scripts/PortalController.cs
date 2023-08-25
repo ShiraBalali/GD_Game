@@ -34,6 +34,7 @@ public class PortalController : MonoBehaviour
         StartCoroutine(MoveInPortal());
         yield return new WaitForSeconds(0.5f);
         player.transform.position = destination.position;
+        playerRb.velocity = Vector2.zero;
         anim.Play("Portal Out");
         yield return new WaitForSeconds(0.5f);
         playerRb.simulated = true;

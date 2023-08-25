@@ -64,7 +64,7 @@ public class MovementController : MonoBehaviour
 
     public void Flip()
     {
-        // particleController.PlayTouchParticle(wallCheckPoint.position);
+        particleController.PlayTouchParticle(wallCheckPoint.position);
         transform.Rotate(0, 180, 0);
         UpdateRelativeTransform();
     }
