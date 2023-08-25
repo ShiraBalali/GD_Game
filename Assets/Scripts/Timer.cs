@@ -12,8 +12,12 @@ public class ScoreKeeper : MonoBehaviour
 
     public static void Penalty()
     {
-        ScoreKeeper.currentTimer += 10f;
-        ScoreKeeper.colorTicks = 500;
+        if (ScoreKeeper.currentTimer > 0)
+        {
+            ScoreKeeper.currentTimer += 10f;
+            ScoreKeeper.colorTicks = 500;
+
+        }
     }
 }
 
@@ -40,6 +44,6 @@ public class Timer : MonoBehaviour
         {
             timerText.color = Color.white;
         }
-        
+
     }
 }
