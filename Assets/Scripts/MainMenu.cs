@@ -14,10 +14,11 @@ public class MainMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-    } 
+    }
 
-        public void PlayTutorial()
+    public void PlayTutorial()
     {
+        ScoreKeeper.currentTimer = 0;
         SceneManager.LoadSceneAsync("Game Guide");
     }
 }
