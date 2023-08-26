@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
-{   [Header("--- Audio Source ---")]
+{
+    [Header("--- Audio Source ---")]
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource SFXSource;
 
@@ -12,6 +13,21 @@ public class AudioManager : MonoBehaviour
     public AudioClip death;
     public AudioClip wallTouch;
     public AudioClip checkPoint;
+
+    public static AudioManager instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Start()
     {

@@ -15,7 +15,7 @@ public class ParticleController : MonoBehaviour
     [SerializeField] Rigidbody2D playerRb;
 
     float counter;
-    bool isOnGround;
+    bool isOnGround = true;
 
     [Header("")]
     [SerializeField] ParticleSystem fallParticle;
@@ -38,13 +38,15 @@ public class ParticleController : MonoBehaviour
     {
         counter += Time.deltaTime;
 
+        // Debug.Log(isOnGround + " " + playerRb.velocity.x + " " + occurAfterVelocity);
 
         if (isOnGround && Mathf.Abs(playerRb.velocity.x) > occurAfterVelocity)
         {
-
+            // Debug.Log(counter + ">?" + dustFormationPeriod + " " + (counter > dustFormationPeriod));
             if (counter > dustFormationPeriod)
             {
-                movementParticle.Play();
+                // Debug.Log("play");
+                // movementParticle.Play();
                 counter = 0;
             }
 
@@ -54,16 +56,16 @@ public class ParticleController : MonoBehaviour
     public void PlayTouchParticle(Vector2 pos)
     {
         audioManager.PlaySFX(audioManager.wallTouch);
-        touchParticle.transform.position = pos;
-        touchParticle.Play();
+        // touchParticle.transform.position = pos;
+        // touchParticle.Play();
     }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Ground"))
         {
             audioManager.PlaySFX(audioManager.wallTouch);
-            fallParticle.Play();
+            // fallParticle.Play();
             isOnGround = true;
         }
     }
@@ -72,7 +74,7 @@ public class ParticleController : MonoBehaviour
     {
         if (collision.CompareTag("Ground"))
         {
-            audioManager.PlaySFX(audioManager.death);
+            // audioManager.PlaySFX(audioManager.death);
             isOnGround = false;
         }
     }
